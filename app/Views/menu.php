@@ -9,7 +9,7 @@
                     Index</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/items'); ?>">
                     Get All Items</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/getItemInfo'); ?>">
+            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/getItemDescription'); ?>">
                     Get Item</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/ getItemInfo2'); ?>">
                     Select Item</a></li>

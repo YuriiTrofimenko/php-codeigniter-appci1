@@ -30,6 +30,21 @@ class Home extends BaseController
         return view('items', $data);
     }
 
+    public function getItemDescription()
+    {
+        $send = $this->input->post('send');
+        if(!$send)
+            return view('get_item_description');
+        else
+        {
+            /* $id = $this->input->post('itemid');
+            $item=$this->home_model->getItemById($id);
+            $data['item']=$item;
+            $data['title']='Description Of Items '.$id;
+            $this->load->view('item _ info',$data); */
+        }
+    }
+
 	//--------------------------------------------------------------------
 
 }
