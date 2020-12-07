@@ -3,18 +3,18 @@
 <?php /*$this->include('header'); */?>
 <?= $this->section('content') ?>
     <h2><?= $title?></h2>
-    <table>
+    <table class="table">
         <thead>
-            <th>id</th>
-            <th>name</th>
-            <th>price</th>
-            <th>quantity</th>
-            <th>sale price</th>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">price</th>
+            <th scope="col">quantity</th>
+            <th scope="col">sale price</th>
         </thead>
         <tbody>
         <?foreach ($items as $item):?>
             <tr>
-                <td><?= $item['id']?></td>
+                <th  scope="row"><?= $item['id']?></th>
                 <td><?= $item['name']?></td>
                 <td><?= $item['price']?></td>
                 <td><?= $item['quantity']?></td>
