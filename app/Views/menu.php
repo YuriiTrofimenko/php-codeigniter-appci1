@@ -11,7 +11,7 @@
                     Get All Items</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/getItemDescription'); ?>">
                     Get Item</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/ getItemInfo2'); ?>">
+            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/getItemDescription2'); ?>">
                     Select Item</a></li>
         </ul>
     </div>

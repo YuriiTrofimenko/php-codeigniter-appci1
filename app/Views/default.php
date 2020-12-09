@@ -7,7 +7,9 @@
 </head>
 <body>
     <?= $this->include('menu'); ?>
-    <?= $this->renderSection('content') ?>
+    <main class="container">
+        <?= $this->renderSection('content') ?>
+    </main>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

@@ -1,7 +1,7 @@
 <?php
 helper('form');
 
-echo form_open('home/getItemDescription', $data);
+echo form_open('home/getItemDescription');
 echo "<div class='col-md-offset-4'>";
     $inp = [
         'name'=>'itemid',
