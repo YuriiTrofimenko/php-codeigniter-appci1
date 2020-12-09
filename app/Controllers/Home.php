@@ -2,7 +2,13 @@
 
 class Home extends BaseController
 {
-	public function index()
+    private $userModel;
+    public function __construct()
+    {
+        $userModel = model('App\Models\ItemModel');
+    }
+
+    public function index()
 	{
 		// return view('welcome_message');
         return "Hello CodeIgniter 4!";
@@ -14,6 +20,13 @@ class Home extends BaseController
         $data['title']='Page1';
         $data['text']='This text was send from Home controller';
         $data['countries'] = array('Argentina','Belgium','Canada','Great Britain');
+        return view('page1', $data);
+    }
+
+    public function items()
+    {
+        $data['title']='Items';
+        $data['items']=$this->userModel->findAll();
         return view('page1', $data);
     }
 
