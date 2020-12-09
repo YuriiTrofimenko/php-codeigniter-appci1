@@ -5,7 +5,7 @@ class Home extends BaseController
     private $userModel;
     public function __construct()
     {
-        $userModel = model('App\Models\ItemModel');
+        $this->userModel = model('App\Models\ItemModel');
     }
 
     public function index()
@@ -27,9 +27,21 @@ class Home extends BaseController
     {
         $data['title']='Items';
         $data['items']=$this->userModel->findAll();
-        return view('page1', $data);
+        return view('items', $data);
     }
 
-	//--------------------------------------------------------------------
-
+    public function getItemDescription()
+    {
+        $send = $this->input->post('send');
+        if(!$send)
+            return view('get_item_description');
+        else
+        {
+            /* $id = $this->input->post('itemid');
+            $item=$this->home_model->getItemById($id);
+            $data['item']=$item;
+            $data['title']='Description Of Items '.$id;
+            $this->load->view('item _ info',$data); */
+        }
+    }
 }
