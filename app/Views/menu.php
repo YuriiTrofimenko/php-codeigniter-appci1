@@ -13,6 +13,8 @@
                     Get Item</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/getItemDescription2'); ?>">
                     Select Item</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/selectImages'); ?>">
+                    Select Images</a></li>
         </ul>
     </div>
 </nav>
