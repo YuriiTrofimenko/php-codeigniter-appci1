@@ -91,9 +91,9 @@ class Home extends BaseController
             $isValid = $this->validate([
                 'image' => [
                     'uploaded[image]',
-                    'max_size[image,2048]',
-                    'max_dims[image,1024,800]',
-                    'ext_in[image,png,jpg,gif]'
+                    'max_size[image,10000]',
+                    'max_dims[image,10000,10000]',
+                    'ext_in[image,png,jpg,jpeg,gif]'
                 ]
             ]);
             if (!$isValid) {
@@ -103,17 +103,16 @@ class Home extends BaseController
                 }
                 return view('form_upload', $data);
             } else {
-                $path = './upload/images/';
+                $path = '/upload/images/';
                 $fileName = uniqid() . '_' . $file->getName();
                 $data = [
                     'item_id' => 1,
                     'path' => $path . $fileName
                 ];
-                $file->move($path, $fileName);
+                $file->move('.' . $path, $fileName);
                 $imageId = null;
                 try{
-                    $this->imageModel->insert($data);
-                    // var_dump($this->imageModel);
+                    $imageId = $this->imageModel->insert($data);
                 } catch (\Exception $ex) {
                     return view('form_upload', $ex->getMessage());
                 }
