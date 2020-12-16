@@ -127,4 +127,37 @@ class Home extends BaseController
             }
         }
     }
+
+    public function registration()
+    {
+        $send = $this->request->getPost('send');
+        if (!$send){
+            return view('form_validation');
+        } else {
+            $validation =  \Config\Services::validation();
+            $validation->setRules([
+                'login' => [
+                    'label'  => 'Username',
+                    'rules'  => 'required|trim|min_length[8]|max_length[16]|is_unique[customers.login]',
+                    'errors' => [
+                        'required' => 'All accounts must have name provided'
+                    ]
+                ],
+                'pass1' => [
+                    'label'  => 'Password',
+                    'rules'  => 'trim|required|min_length[8]|max_length[16]',
+                    'errors' => [
+                        'required' => 'All accounts must have password provided'
+                    ]
+                ]
+            ]);
+            if ($validation->withRequest($this->request)->run()) {
+                $data['success'] = 'Form data passed the validation';
+                return view('form_validation', $data);
+            } else {
+                $data['validation'] = $validation;
+                return view('form_validation', $data);
+            }
+        }
+    }
 }

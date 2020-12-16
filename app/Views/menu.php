@@ -15,6 +15,8 @@
                     Select Item</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/selectImages'); ?>">
                     Select Images</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/registration'); ?>">
+                    Register</a></li>
         </ul>
     </div>
 </nav>
